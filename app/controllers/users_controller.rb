@@ -5,11 +5,13 @@ class UsersController < ApplicationController
     end
 
     def create
-        
-    end
-
-    def show
-    
+        @user = User.new(user_params)
+        if @user.save
+            # save session
+            # redirect to home
+        else
+            # render page again displaying errors
+        end
     end
 
     def destroy
